@@ -1,6 +1,8 @@
 fetch("https://restcountries.com/v3.1/all")
   .then((res) => res.json())
   .then((data) => {
+    data.sort((a, b) => a.name.common.localeCompare(b.name.common));
+
     let tblCountries = document.getElementById("tbl");
 
     let tblBody = `<tr>
