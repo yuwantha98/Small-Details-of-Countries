@@ -26,6 +26,7 @@ function serchCuntrie() {
   let countryCurrencies = document.getElementById("currencies");
   let countryRegion = document.getElementById("region");
   let countryPopulation = document.getElementById("population");
+  let countryLanguages = document.getElementById("languages");
   let img = document.getElementById("img");
 
   console.log(searchValue);
@@ -43,6 +44,13 @@ function serchCuntrie() {
         countryCurrencies.innerText = currencies;
 
         countryRegion.innerHTML = "Region : " + obj.region;
+
+        let languages = "Languages : ";
+        for (let key in obj.languages) {
+          languages += `${obj.languages[key]} `;
+        }
+        countryLanguages.innerText = languages;
+
         countryPopulation.innerHTML = "Population : " + obj.population;
 
         img.innerHTML = `<img src="${obj.flags.png}" alt="">`;
