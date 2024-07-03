@@ -60,3 +60,7 @@ function serchCuntrie() {
       console.log(data);
     });
 }
+
+document
+  .getElementById("txtSearchValue")
+  .addEventListener("input", serchCuntrie);
